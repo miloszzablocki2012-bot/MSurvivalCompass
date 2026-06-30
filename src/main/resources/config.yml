@@ -1,0 +1,26 @@
+worlds:
+  lobby: 'Lobby'
+  survival: 'world'
+
+compass:
+  slot: 4
+  name: '&6&lMSurvival Menu'
+  lore:
+    - '&8━━━━━━━━━━━━━━━━'
+    - '&7Kliknij, aby otworzyć menu.'
+    - '&6&lMSURVIVAL'
+    - '&8━━━━━━━━━━━━━━━━'
+
+menu:
+  title: '&6&lMSURVIVAL MENU'
+  survival-name: '&a&lSurvival'
+  keys-name: '&6&lKlucze'
+  kits-name: '&b&lE-Kity'
+  market-name: '&e&lRynek'
+
+messages:
+  prefix: '&6&lMSurvival &8» &r'
+  lobby: '&aPrzeniesiono do Lobby.'
+  survival: '&aPrzeniesiono na Survival.'
+  no-world: '&cNie znaleziono świata.'
+  reload: '&aPrzeładowano konfigurację.'

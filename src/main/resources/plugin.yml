@@ -1,0 +1,18 @@
+name: MSurvivalCompass
+version: 1.0
+main: pl.msurvival.compass.MSurvivalCompass
+api-version: '1.21'
+author: Milekz
+commands:
+  lobby:
+    usage: /lobby
+    aliases: [hub]
+  survival:
+    usage: /survival
+  menu:
+    usage: /menu
+  compassreload:
+    usage: /compassreload
+permissions:
+  msurvival.compass.admin:
+    default: op
