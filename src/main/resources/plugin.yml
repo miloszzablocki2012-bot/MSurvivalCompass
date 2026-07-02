@@ -1,18 +1,24 @@
 name: MSurvivalCompass
-version: 1.0
+version: 9.0-github-design
 main: pl.msurvival.compass.MSurvivalCompass
 api-version: '1.21'
 author: Milekz
+softdepend:
+  - MSurvivalKeys
+  - MSurvivalMarket
+  - Multiverse-Core
 commands:
+  mscompass:
+    usage: /mscompass reload
+    aliases: [compassreload]
   lobby:
     usage: /lobby
-    aliases: [hub]
   survival:
     usage: /survival
-  menu:
-    usage: /menu
-  compassreload:
-    usage: /compassreload
+  setmsspawn:
+    usage: /setmsspawn <lobby|survival>
 permissions:
   msurvival.compass.admin:
     default: op
+  msurvival.compass.use:
+    default: true

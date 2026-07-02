@@ -1,26 +1,35 @@
 worlds:
-  lobby: 'Lobby'
-  survival: 'world'
-
+  lobby: lobby
+  survival: world
+teleport:
+  double-teleport-fix: true
+  second-teleport-delay-ticks: 8
+  safe-center-block: true
 compass:
+  enabled: true
   slot: 4
-  name: '&6&lMSurvival Menu'
+  material: COMPASS
+  name: '&6◆ &e&lMSURVIVAL &7» &fMenu'
   lore:
-    - '&8━━━━━━━━━━━━━━━━'
-    - '&7Kliknij, aby otworzyć menu.'
-    - '&6&lMSURVIVAL'
-    - '&8━━━━━━━━━━━━━━━━'
-
+    - '&7Centrum serwera &eMSurvival&7.'
+    - '&eSurvival &8• &aKlucze &8• &dE-Kity &8• &2Rynek'
+    - '&bLobby &8• &cRegulamin &8• &6Spawn'
+    - '&7IP &7» &bmsurvival.6mc.pl'
+  remove-normal-compasses-in-lobby: false
 menu:
-  title: '&6&lMSURVIVAL MENU'
-  survival-name: '&a&lSurvival'
-  keys-name: '&6&lKlucze'
-  kits-name: '&b&lE-Kity'
-  market-name: '&e&lRynek'
-
+  title: '&6◆ &e&lMSURVIVAL &7» &fMENU'
+  # Te nazwy są kolorowe osobno, nie tylko pomarańczowe.
+  survival-name: '&e&lSURVIVAL &7» &fWejdź do świata'
+  keys-name: '&a&lKLUCZE &7» &fNagrody i skrzynki'
+  kits-name: '&d&lE-KITY &7» &fZestawy z kluczy'
+  market-name: '&2&lRYNEK &7» &fKupno i sprzedaż'
 messages:
-  prefix: '&6&lMSurvival &8» &r'
-  lobby: '&aPrzeniesiono do Lobby.'
-  survival: '&aPrzeniesiono na Survival.'
-  no-world: '&cNie znaleziono świata.'
-  reload: '&aPrzeładowano konfigurację.'
+  prefix: '&6◆ &e&lMSURVIVAL &7» &r'
+  lobby: '&b⚡ &fPrzeniesiono do &blobby&f.'
+  survival: '&e◆ &fPrzeniesiono na &eSurvival&f.'
+  no-world: '&c⚠ &fNie znaleziono świata: &e%world%'
+  reload: '&a$ &fPrzeładowano &emenu i kompas&f.'
+  bypass-on: '&a$ &fBypass kompasu &awłączony&f.'
+  bypass-off: '&c⚠ &fBypass kompasu &cwyłączony&f.'
+  spawn-set: '&a$ &fUstawiono spawn &e%type% &fna świecie &e%world%&f.'
+  spawn-missing: '&c⚠ &fBrak spawna &e%type%&f. Ustaw: &e/setmsspawn %type%'
