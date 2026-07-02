@@ -1,35 +1,107 @@
-worlds:
-  lobby: lobby
-  survival: world
-teleport:
-  double-teleport-fix: true
-  second-teleport-delay-ticks: 8
-  safe-center-block: true
+settings:
+  lobby-world: 'lobby'
+  survival-world: 'world'
+  compass-slot: 4
+  force-slot: true
+  give-on-join-delay-ticks: 20
+  give-on-world-change-delay-ticks: 8
+  update-task-enabled: true
+  update-task-ticks: 40
+
+messages:
+  prefix: '&6◆ &e&lMSURVIVAL &8» &r'
+  reloaded: '&aPrzeladowano kompas.'
+  fixed: '&aNaprawiono kompas w ekwipunku.'
+  only-player: '&cTa komenda jest tylko dla gracza.'
+  no-permission: '&cNie masz uprawnien.'
+  not-in-lobby: '&cKompas dziala tylko w lobby.'
+
 compass:
-  enabled: true
-  slot: 4
   material: COMPASS
   name: '&6◆ &e&lMSURVIVAL &7» &fMenu'
   lore:
-    - '&7Centrum serwera &eMSurvival&7.'
-    - '&eSurvival &8• &aKlucze &8• &dE-Kity &8• &2Rynek'
-    - '&bLobby &8• &cRegulamin &8• &6Spawn'
-    - '&7IP &7» &bmsurvival.6mc.pl'
-  remove-normal-compasses-in-lobby: false
+    - '&7Kliknij, aby otworzyc menu serwera.'
+    - ''
+    - '&eSurvival &8| &aKlucze &8| &dE-Kity &8| &2Rynek'
+    - '&7» &fWszystko w jednym miejscu.'
+  enchanted: false
+
+cleanup:
+  enabled: true
+  remove-on-non-lobby: true
+  remove-extra-compasses: true
+  # Usuwa tez stare kompasy menu bez PDC, jesli maja podobna nazwe.
+  remove-old-menu-compasses-by-name: true
+  old-name-contains:
+    - 'MSURVIVAL'
+    - 'Menu'
+    - 'Kompas'
+
 menu:
+  size: 27
   title: '&6◆ &e&lMSURVIVAL &7» &fMENU'
-  # Te nazwy są kolorowe osobno, nie tylko pomarańczowe.
-  survival-name: '&e&lSURVIVAL &7» &fWejdź do świata'
-  keys-name: '&a&lKLUCZE &7» &fNagrody i skrzynki'
-  kits-name: '&d&lE-KITY &7» &fZestawy z kluczy'
-  market-name: '&2&lRYNEK &7» &fKupno i sprzedaż'
-messages:
-  prefix: '&6◆ &e&lMSURVIVAL &7» &r'
-  lobby: '&b⚡ &fPrzeniesiono do &blobby&f.'
-  survival: '&e◆ &fPrzeniesiono na &eSurvival&f.'
-  no-world: '&c⚠ &fNie znaleziono świata: &e%world%'
-  reload: '&a$ &fPrzeładowano &emenu i kompas&f.'
-  bypass-on: '&a$ &fBypass kompasu &awłączony&f.'
-  bypass-off: '&c⚠ &fBypass kompasu &cwyłączony&f.'
-  spawn-set: '&a$ &fUstawiono spawn &e%type% &fna świecie &e%world%&f.'
-  spawn-missing: '&c⚠ &fBrak spawna &e%type%&f. Ustaw: &e/setmsspawn %type%'
+  filler:
+    enabled: true
+    material: GRAY_STAINED_GLASS_PANE
+    name: '&8'
+  items:
+    survival:
+      slot: 10
+      material: GRASS_BLOCK
+      name: '&e&lSURVIVAL'
+      lore:
+        - '&7» &fKliknij, aby wejsc na tryb.'
+        - '&7» &fSwiat: &eworld'
+        - ''
+        - '&aKliknij, aby teleportowac.'
+      command: 'mvtp world'
+      close: true
+      sound: 'ENTITY_ENDERMAN_TELEPORT'
+    keys:
+      slot: 12
+      material: TRIPWIRE_HOOK
+      name: '&a&lKLUCZE'
+      lore:
+        - '&7» &fOtworz menu kluczy.'
+        - '&7» &fDaily, weekly i klucze premium.'
+        - ''
+        - '&aKliknij, aby otworzyc.'
+      command: 'keysmenu'
+      close: true
+      sound: 'BLOCK_NOTE_BLOCK_PLING'
+    kits:
+      slot: 14
+      material: NETHERITE_CHESTPLATE
+      name: '&d&lE-KITY'
+      lore:
+        - '&7» &fZobacz dostepne e-kity.'
+        - '&7» &fKlasyczny, Epic, Boski i wiecej.'
+        - ''
+        - '&aKliknij, aby otworzyc.'
+      command: 'kits'
+      close: true
+      sound: 'ITEM_ARMOR_EQUIP_DIAMOND'
+    market:
+      slot: 16
+      material: EMERALD
+      name: '&2&lRYNEK'
+      lore:
+        - '&7» &fKupuj i sprzedawaj itemy.'
+        - '&7» &fSprawdz klucze i oferty.'
+        - ''
+        - '&aKliknij, aby otworzyc.'
+      command: 'rynek'
+      close: true
+      sound: 'ENTITY_EXPERIENCE_ORB_PICKUP'
+    lobby:
+      slot: 22
+      material: END_CRYSTAL
+      name: '&b&lLOBBY'
+      lore:
+        - '&7» &fWroc na lobby serwera.'
+        - '&7» &fOsobny ekwipunek lobby.'
+        - ''
+        - '&aKliknij, aby teleportowac.'
+      command: 'mvtp lobby'
+      close: true
+      sound: 'ENTITY_ENDERMAN_TELEPORT'

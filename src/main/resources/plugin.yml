@@ -1,24 +1,24 @@
 name: MSurvivalCompass
-version: 9.0-github-design
-main: pl.msurvival.compass.MSurvivalCompass
+version: 1.0.0
+main: pl.msurvival.compass.MSurvivalCompassPlugin
 api-version: '1.21'
-author: Milekz
+author: Milekz / ChatGPT
+description: Custom MSurvival lobby compass menu.
 softdepend:
+  - Multiverse-Core
+  - MSurvivalLobby
   - MSurvivalKeys
   - MSurvivalMarket
-  - Multiverse-Core
 commands:
-  mscompass:
-    usage: /mscompass reload
-    aliases: [compassreload]
-  lobby:
-    usage: /lobby
-  survival:
-    usage: /survival
-  setmsspawn:
-    usage: /setmsspawn <lobby|survival>
+  menu:
+    description: Otwiera menu MSurvival.
+    aliases: [kompas, compass, mscompass]
+  compassreload:
+    description: Przeladowuje MSurvivalCompass.
+    permission: msurvivalcompass.admin
+  compassfix:
+    description: Czysci i daje kompas menu.
+    permission: msurvivalcompass.admin
 permissions:
-  msurvival.compass.admin:
+  msurvivalcompass.admin:
     default: op
-  msurvival.compass.use:
-    default: true
