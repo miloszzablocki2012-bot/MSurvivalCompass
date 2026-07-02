@@ -1,4 +1,4 @@
-name: Build MSurvival plugins
+name: Build MSurvivalCompass
 
 on:
   workflow_dispatch:
@@ -6,10 +6,13 @@ on:
     branches:
       - main
       - master
+    paths:
+      - 'MSurvivalCompass/**'
+      - '.github/workflows/build-compass.yml'
 
 jobs:
   build:
-    name: Build Java 25 JARs
+    name: Build MSurvivalCompass Java 25
     runs-on: ubuntu-latest
 
     steps:
@@ -23,24 +26,18 @@ jobs:
           java-version: '25'
           cache: maven
 
-      - name: Build MSurvivalKeys
-        run: |
-          cd MSurvivalKeys
-          mvn clean package -DskipTests
-
       - name: Build MSurvivalCompass
         run: |
           cd MSurvivalCompass
           mvn clean package -DskipTests
 
-      - name: Prepare artifacts
+      - name: Prepare artifact
         run: |
           mkdir -p output
-          cp MSurvivalKeys/target/*.jar output/MSurvivalKeys.jar
           cp MSurvivalCompass/target/*.jar output/MSurvivalCompass.jar
 
-      - name: Upload JARs
+      - name: Upload Compass JAR
         uses: actions/upload-artifact@v4
         with:
-          name: MSurvival-Java25-JARs
-          path: output/*.jar
+          name: MSurvivalCompass-Java25
+          path: output/MSurvivalCompass.jar
